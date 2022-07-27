@@ -1,13 +1,11 @@
 export class MyDate {
-  //Las clases siempre piden inicializar las propiedades
-  year: number = 0;
-  month: number = 0;
-  private day: number = 0;
+
   //tambien se puede inicializar con el constructor
-  constructor(year: number, month: number, day: number) {
-    this.year = year;
-    this.month = month;
-    this.day = day;
+  constructor(
+    public year: number = 1993,
+    public month: number = 7,
+    private day: number = 9) {
+
   }
 
    printFormat(): string {
@@ -39,9 +37,18 @@ export class MyDate {
   }
 }
 
-const myDate = new MyDate(2022,6,25);
+// const myDate = new MyDate(2022,6,25);
 // console.log(myDate.printFormat());
-myDate.add(3, 'days');
+// myDate.add(3, 'days');
 // console.log(myDate.printFormat());
-console.log(myDate.printFormat());
-console.log(myDate.getDay());
+// console.log(myDate.printFormat());
+// console.log(myDate.getDay());
+
+const myDate2 = new MyDate();
+console.log('() =>',myDate2.printFormat());
+
+const myDate3 = new MyDate(2022);
+console.log('(2022) =>',myDate3.printFormat());
+
+const myDate4 = new MyDate(2022, 3);
+console.log('(2022, 3) =>',myDate4.printFormat());
